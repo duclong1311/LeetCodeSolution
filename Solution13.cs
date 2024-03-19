@@ -14,7 +14,7 @@
 
         int ans = 0;
 
-        for (int i = 0; i < s.Length; i++)
+        for (int i = 0; i < s.Length - 1; i++) // Adjusted loop condition
         {
             if (m[s[i]] < m[s[i + 1]])
             {
@@ -25,6 +25,10 @@
                 ans += m[s[i]];
             }
         }
+
+        // Add the value of the last character
+        ans += m[s[s.Length - 1]];
+
         return ans;
     }
 }
